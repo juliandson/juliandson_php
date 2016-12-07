@@ -1,5 +1,11 @@
 # juliandson_php
 
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
 <?php
     
     
@@ -7,7 +13,8 @@
     $nome_usuario = "root";
     $senha = "";
 	$nome_banco = "Bancoconversa1";
-    // Criar conexão
+    
+	// Criar conexão
     $conecta = new mysqli($nome_servidor,$nome_usuario,$senha,$nome_banco);
     // Verificar Conexão
     if ($conecta->connect_error) {
@@ -16,17 +23,18 @@
     echo "Conexão realizada com sucesso <br>";
     
 	
-
+ 
      $sql = "SELECT id,conversa, megasena FROM conversa";
- $resultado = $conecta->query($sql);
- if ($resultado->num_rows > 0) {
+		$resultado = $conecta->query($sql);
+			if ($resultado->num_rows > 0) {
  // saída dos dados
- while($linha = $resultado->fetch_assoc()) {
- echo "id: " . $linha["id"]. " - Name: " . $linha["conversa"]. " " . $linha["megasena"]. "<br>";
- }
- } else {
- echo "0 results";
- }
+		
+		while($linha = $resultado->fetch_assoc()) {
+			 echo "id: " . $linha["id"]. " - Name: " . $linha["conversa"]. " " . $linha["megasena"]. "<br>";
+			}
+			}else {
+			echo "0 results";
+			}
 
 	
 	$url=file_get_contents('https://api.telegram.org/bot267280014:AAHI1LpAoTNse_37pLe0z0kj70bn7KGJrKM/getUpdates');
@@ -75,3 +83,6 @@
 	}
 	$conecta->close();
 ?>
+
+    </body>
+</html>
