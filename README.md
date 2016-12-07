@@ -39,8 +39,7 @@
 		$idUpdate[$i] = $x['result'][$i]['update_id'];	
         $idChat[$i] = $x['result'][$i]['message']['chat']['id'];
         $text[$i] = $x['result'][$i]['message']['text'];
-    }
-	
+    }	
 	$file = "idUpdate.txt"; //criando arquivo de texto
 	$str = file_get_contents($file);
     $arrFile =  explode( ',', $str);
