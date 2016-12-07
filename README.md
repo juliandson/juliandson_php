@@ -16,27 +16,7 @@
     echo "Conexão realizada com sucesso <br>";
     
 	
-   /*
-    $sql = "CREATE DATABASE Bancoconversa1";
-    if ($conecta->query($sql) === TRUE) {
-    echo "Banco de dados criado com sucesso<br>";
-    } else {
-     echo "Erro na criação do banco de dados: " . $conecta->error."<br>";
-	}
-   
-   */
-   /*
-		 $sql = "CREATE TABLE conversa(
-		 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-		 conversa VARCHAR(1000) NOT NULL,
-		 megasena VARCHAR(6) NOT NULL
-		 )";
-		 if ($conecta->query($sql) === TRUE) {
-		 echo "Tabela conversa criada com sucesso<br>";
-		 } else {
-		 echo "Erro na criação da tabela conversa: " . $conecta->error."<br>";
-		 }
- */
+
      $sql = "SELECT id,conversa, megasena FROM conversa";
  $resultado = $conecta->query($sql);
  if ($resultado->num_rows > 0) {
